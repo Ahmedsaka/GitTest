@@ -1,0 +1,31 @@
+<joblist>
+  <job>
+    <defaultTab>summary</defaultTab>
+    <description></description>
+    <dispatch>
+      <excludePrecedence>true</excludePrecedence>
+      <keepgoing>true</keepgoing>
+      <rankOrder>ascending</rankOrder>
+      <successOnEmptyNodeFilter>false</successOnEmptyNodeFilter>
+      <threadcount>1</threadcount>
+    </dispatch>
+    <executionEnabled>true</executionEnabled>
+    <group>Restart-Esb</group>
+    <id>cca301b0-2606-46f5-a3e5-839797402314</id>
+    <loglevel>INFO</loglevel>
+    <name>restart-esb-postilion</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <nodefilters>
+      <filter>tags: esb-postilion</filter>
+    </nodefilters>
+    <nodesSelectedByDefault>true</nodesSelectedByDefault>
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <description>restart esb</description>
+        <exec>sc stop Fuse-ServiceMix-Bus-v7.1.0-047 &amp; sleep 30 &amp; sc start Fuse-ServiceMix-Bus-v7.1.0-047 &amp; sleep 180"</exec>
+      </command>
+    </sequence>
+    <uuid>cca301b0-2606-46f5-a3e5-839797402314</uuid>
+  </job>
+</joblist>

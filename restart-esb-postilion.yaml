@@ -1,0 +1,25 @@
+- defaultTab: summary
+  description: ''
+  executionEnabled: true
+  group: Restart-Esb
+  id: cca301b0-2606-46f5-a3e5-839797402314
+  loglevel: INFO
+  name: restart-esb-postilion
+  nodeFilterEditable: false
+  nodefilters:
+    dispatch:
+      excludePrecedence: true
+      keepgoing: true
+      rankOrder: ascending
+      successOnEmptyNodeFilter: false
+      threadcount: '1'
+    filter: 'tags: esb-postilion'
+  nodesSelectedByDefault: true
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - description: restart esb
+      exec: sc stop Fuse-ServiceMix-Bus-v7.1.0-047 & sleep 30 & sc start Fuse-ServiceMix-Bus-v7.1.0-047 & sleep 180"
+    keepgoing: false
+    strategy: node-first
+  uuid: cca301b0-2606-46f5-a3e5-839797402314
